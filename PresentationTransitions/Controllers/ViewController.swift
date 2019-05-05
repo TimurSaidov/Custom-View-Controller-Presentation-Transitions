@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     private let herbs = HerbModel.all()
     private var selectedImage: UIImageView?
+    private let transition = PopAnimator()
 
     
     // MARK: Outlets
@@ -34,6 +35,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        transition.dismissCompletion = {
+            self.selectedImage!.isHidden = false
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -94,7 +99,23 @@ class ViewController: UIViewController {
         // Present details view controller.
         let herbDetails = storyboard!.instantiateViewController(withIdentifier: "HerbDetailsViewController") as! HerbDetailsViewController
         herbDetails.herb = selectedHerb
+        herbDetails.transitioningDelegate = self
         present(herbDetails, animated: true, completion: nil)
     }
 }
 
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        // This sets the originFrame of the transition to the frame of selectedImage, which is the image view you last tapped. Then you set presenting to true and hide the tapped image during the animation.
+        transition.originFrame = selectedImage!.superview!.convert(selectedImage!.frame, to: nil)
+        transition.presenting = true
+        selectedImage!.isHidden = true
+        
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.presenting = false
+        return transition
+    }
+}

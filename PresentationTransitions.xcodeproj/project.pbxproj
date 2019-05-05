@@ -14,6 +14,7 @@
 		3975C543227D91C400A606AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3975C541227D91C400A606AA /* LaunchScreen.storyboard */; };
 		3975C54B227D97A900A606AA /* HerbModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3975C54A227D97A900A606AA /* HerbModel.swift */; };
 		3975C54D227D9AC800A606AA /* HerbDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3975C54C227D9AC800A606AA /* HerbDetailsViewController.swift */; };
+		39DF8351227EFEE3003E6A28 /* PopAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DF8350227EFEE3003E6A28 /* PopAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3975C544227D91C400A606AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3975C54A227D97A900A606AA /* HerbModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerbModel.swift; sourceTree = "<group>"; };
 		3975C54C227D9AC800A606AA /* HerbDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HerbDetailsViewController.swift; sourceTree = "<group>"; };
+		39DF8350227EFEE3003E6A28 /* PopAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,15 +61,40 @@
 			isa = PBXGroup;
 			children = (
 				3975C538227D91C100A606AA /* AppDelegate.swift */,
-				3975C54A227D97A900A606AA /* HerbModel.swift */,
-				3975C53A227D91C100A606AA /* ViewController.swift */,
-				3975C54C227D9AC800A606AA /* HerbDetailsViewController.swift */,
+				39DF8353227F10DA003E6A28 /* Model */,
+				39DF8352227F10CB003E6A28 /* Controllers */,
+				39DF8354227F10E0003E6A28 /* Animator */,
 				3975C53C227D91C100A606AA /* Main.storyboard */,
 				3975C53F227D91C400A606AA /* Assets.xcassets */,
 				3975C541227D91C400A606AA /* LaunchScreen.storyboard */,
 				3975C544227D91C400A606AA /* Info.plist */,
 			);
 			path = PresentationTransitions;
+			sourceTree = "<group>";
+		};
+		39DF8352227F10CB003E6A28 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3975C53A227D91C100A606AA /* ViewController.swift */,
+				3975C54C227D9AC800A606AA /* HerbDetailsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		39DF8353227F10DA003E6A28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3975C54A227D97A900A606AA /* HerbModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		39DF8354227F10E0003E6A28 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				39DF8350227EFEE3003E6A28 /* PopAnimator.swift */,
+			);
+			path = Animator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +172,7 @@
 				3975C53B227D91C100A606AA /* ViewController.swift in Sources */,
 				3975C54B227D97A900A606AA /* HerbModel.swift in Sources */,
 				3975C539227D91C100A606AA /* AppDelegate.swift in Sources */,
+				39DF8351227EFEE3003E6A28 /* PopAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
